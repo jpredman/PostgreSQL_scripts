@@ -1,7 +1,7 @@
 # PostgreSQL_scripts
 PostgreSQL scripts for creating and loading data for airport web app project
 
-Web map app is done in CartoDB, which uses PostGIS as a backend that can be installed on any PostgreSQL database. I decided to normalize my data as I collected it and work in the beginning on creating a schema that makes sense with CartoDB.
+Web map app is done in CartoDB, which uses PostGIS as a backend that can be installed on any PostgreSQL database. I decided to normalize my data as I collected it and work in the beginning on creating a schema that makes sense with CartoDB (see attached Normalization.jpg for my original whiteboarding of the normilzatoion process).
 
 -Included all of the LEGACY and MAJOR-NATIONAL-LLC airlines, the top 2 CARGO airlines (ups & fedex) and all REGIONAL airlines with >500 pilots (as of March 2017).
 

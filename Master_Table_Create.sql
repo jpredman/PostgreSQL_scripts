@@ -146,15 +146,18 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.Fleet
     OWNER to postgres;
-    
+  
 #HUB
 CREATE TABLE public.HUB
 (
     HUB character varying NOT NULL,
     Airport_Name character varying,
     City character varying,
+    State character varying,
     Country character varying,
-    LatLong point[] NOT NULL,
+    latitude numeric(12,8),
+	longitude numeric(12,8),
+    LatLong GEOGRAPHY(POINT,4326),#WGS84 SRID=4326
     CONSTRAINT HUB_pkey PRIMARY KEY (HUB)
 )
 WITH (

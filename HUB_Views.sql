@@ -1,6 +1,15 @@
+/*
+DROP VIEW HUB_Master;
+DROP VIEW HUB_Major;
+DROP VIEW HUB_MidMajor;
+DROP VIEW HUB_Regional;
+DROP VIEW HUB_Cargo;
+*/
+
 CREATE VIEW HUB_Master AS
 	select 
-    a.airline
+    row_number() OVER () AS id
+    ,a.airline
     ,a.hub
     ,b.airport_name
     ,c.airline_cat
@@ -9,10 +18,11 @@ CREATE VIEW HUB_Master AS
   	from airline_hub a 
     join hub b on b.hub = a.hub
     join airline c on c.airline = a.airline;
-    
+
 CREATE VIEW HUB_Major AS
 	select 
-    a.airline
+    row_number() OVER () AS id
+    ,a.airline
     ,a.hub
     ,b.airport_name
     ,c.airline_cat
@@ -25,7 +35,8 @@ CREATE VIEW HUB_Major AS
     
 CREATE VIEW HUB_MidMajor AS
 	select 
-    a.airline
+    row_number() OVER () AS id
+    ,a.airline
     ,a.hub
     ,b.airport_name
     ,c.airline_cat
@@ -38,7 +49,8 @@ CREATE VIEW HUB_MidMajor AS
     
  CREATE VIEW HUB_Regional AS
 	select 
-    a.airline
+    row_number() OVER () AS id
+    ,a.airline
     ,a.hub
     ,b.airport_name
     ,c.airline_cat
@@ -51,7 +63,8 @@ CREATE VIEW HUB_MidMajor AS
     
 CREATE VIEW HUB_Cargo AS
 	select 
-    a.airline
+    row_number() OVER () AS id
+    ,a.airline
     ,a.hub
     ,b.airport_name
     ,c.airline_cat

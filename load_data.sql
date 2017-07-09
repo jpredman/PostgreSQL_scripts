@@ -67,3 +67,11 @@ SET latlong = ST_GeomFromText('POINT(' || longitude || ' ' || latitude || ')');
 
 select * from hub
 COMMIT;
+
+#Airline_HUB
+BEGIN;
+COPY airline_hub(id, airline, hub, departures)
+FROM 'C:\Airport Project\postgres_load\airline_hub.csv' DELIMITER ',' CSV;
+
+select * from airline_hub;
+COMMIT;
